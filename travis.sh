@@ -1,6 +1,6 @@
 #!/bin/bash
 # Demyx
-# https://compkickers.sh
+# https://demyx.sh
 # https://github.com/peter-evans/dockerhub-description/blob/master/entrypoint.sh
 IFS=$'\n\t'
 
@@ -19,7 +19,7 @@ DEMYX_MARIADB_VERSION=$DEMYX_MARIADB_VERSION" > VERSION
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
-git remote set-url origin https://${DEMYX_GITHUB_TOKEN}@github.com/compkickers/"$DEMYX_REPOSITORY".git
+git remote set-url origin https://${DEMYX_GITHUB_TOKEN}@github.com/demyxco/"$DEMYX_REPOSITORY".git
 # Commit VERSION first
 git add VERSION
 git commit -m "ALPINE $DEMYX_MARIADB_ALPINE_VERSION, MARIADB $DEMYX_MARIADB_VERSION"
