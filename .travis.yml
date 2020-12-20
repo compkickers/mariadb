@@ -14,10 +14,10 @@ env:
 
 before_install:
   - docker pull alpine
-  - docker pull compkickers/nginx
-  - docker pull compkickers/wordpress
-  - docker pull compkickers/wordpress:cli
-  - docker pull compkickers/utilities
+  - docker pull demyx/nginx
+  - docker pull demyx/wordpress
+  - docker pull demyx/wordpress:cli
+  - docker pull demyx/utilities
   - docker network create demyx
 
 script:
@@ -32,5 +32,5 @@ script:
 
 after_success:
   - echo "$DEMYX_PASSWORD" | docker login -u "$DEMYX_USERNAME" --password-stdin
-  - docker push demyx/"$DEMYX_REPOSITORY"
+  - docker push compkickers/"$DEMYX_REPOSITORY"
   - bash travis.sh
